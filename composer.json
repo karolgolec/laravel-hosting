@@ -1,0 +1,30 @@
+{
+    "name": "karolgolec/laravel-hosting",
+    "description": "A package that allows you to run Laravel along with a queue on your hosting.",
+    "keywords": ["laravel-hosting", "seohost", "hosting", "ssh"],
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "KarolGolec\\LaravelHosting\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karol Golec",
+            "email": "kontakt@karolgolec.pl"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KarolGolec\\LaravelHosting\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "^v10|^v11",
+        "deployer/deployer": "^7.0"
+    }
+}
