@@ -5,6 +5,7 @@ namespace KarolGolec\LaravelHosting;
 use Illuminate\Console\Scheduling\Schedule;
 use KarolGolec\LaravelHosting\Console\Commands\Install;
 use KarolGolec\LaravelHosting\Console\Commands\RunQueueWork;
+use KarolGolec\LaravelHosting\Console\Commands\Test;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -21,6 +22,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             $this->commands([
                 Install::class,
                 RunQueueWork::class,
+                Test::class,
             ]);
         }
 
