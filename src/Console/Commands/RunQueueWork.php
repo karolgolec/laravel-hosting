@@ -135,8 +135,16 @@ class RunQueueWork extends Command
 
     private function getPhpBin(): string
     {
-        $this->info('Detected PHP binary: '.PHP_BINARY);
-        return PHP_BINARY;
+        $phpBinary = PHP_BINARY;
+
+        $phpIniPath = '~/php-cli-laravel-seohost.ini';
+
+        if (file_exists($phpIniPath)) {
+            $phpBinary .= ' -c '. $phpIniPath;
+        }
+
+        $this->info('Detected PHP binary: '.$phpBinary);
+        return $phpBinary;
     }
 
     public function killToManyProcess(array $workerProcesses): void
