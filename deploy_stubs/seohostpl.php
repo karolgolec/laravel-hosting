@@ -17,7 +17,7 @@ host('{{HOST_NAME}}')
     ->set('identifyFile', '{{SSH_PRIVATE_KEY}}')
     ->set('http_user', '{{HOST_USER}}')
     ->set('deploy_path', '/home/{{HOST_USER}}/domains/{{DOMAIN}}/public_html')
-    ->set('bin/php', '/opt/alt/php82/usr/bin/php')
+    ->set('bin/php', '/opt/alt/php82/usr/bin/php -c ~/php-cli-laravel-seohost.ini')
     ->set('bin/npm', '/opt/alt/alt-nodejs20/root/bin/npm')
     ->set('bin/node', '/opt/alt/alt-nodejs20/root/usr/bin/node');
 
