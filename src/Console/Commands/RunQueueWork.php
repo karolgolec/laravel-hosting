@@ -137,9 +137,9 @@ class RunQueueWork extends Command
     {
         $phpBinary = PHP_BINARY;
 
-        $phpIniPath = $_SERVER['HOME'] .'/php-cli-laravel-seohost.ini';
+        $phpIniPath = config('laravel-hosting.php_ini_path');
 
-        if (file_exists($phpIniPath)) {
+        if ($phpIniPath && file_exists($phpIniPath)) {
 
             $phpBinary = $phpBinary. ' -c '. $phpIniPath;
         }

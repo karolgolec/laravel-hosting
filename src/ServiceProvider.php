@@ -24,15 +24,15 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
                 RunQueueWork::class,
                 Test::class,
             ]);
+
+            $this->app->booted(function () {
+                $schedule = $this->app->make(Schedule::class);
+
+                if (config('laravel-hosting.queue_enabled')) {
+                    $schedule->command('queue:work:hosting')->everyMinute();
+                }
+            });
         }
-
-        $this->app->booted(function () {
-            $schedule = $this->app->make(Schedule::class);
-
-            if (config('laravel-hosting.queue_enabled')) {
-                $schedule->command('queue:work:hosting')->everyMinute();
-            }
-        });
     }
 
     /**
