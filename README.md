@@ -30,5 +30,5 @@ Link partnerski: [SeoHost.pl](https://seohost.pl/?ref=49482)
 CRON command. Complete the command parameters.
 
 ```
-/opt/alt/php82/usr/bin/php /home/{{HOST_USER}}/domains/{{DOMAIN}}/public_html/current/artisan schedule:run >> /dev/null 2>&1
+/opt/alt/php82/usr/bin/php -c ~/php-cli-laravel-seohost.ini /home/{{HOST_USER}}/domains/{{DOMAIN}}/public_html/current/artisan schedule:run >> /dev/null 2>&1
 ```
