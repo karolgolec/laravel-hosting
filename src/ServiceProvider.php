@@ -19,6 +19,13 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         ]);
 
         if ($this->app->runningInConsole()) {
+
+            if (config('laravel-hosting.queue_enabled') &&
+                config('laravel-hosting.php_ini_path')){
+
+                putenv('PHP_BINARY="'.PHP_BINARY . ' -c '.config('laravel-hosting.php_ini_path').'"');
+            }
+
             $this->commands([
                 Install::class,
                 RunQueueWork::class,
