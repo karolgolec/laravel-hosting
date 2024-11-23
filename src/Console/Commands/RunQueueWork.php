@@ -42,7 +42,7 @@ class RunQueueWork extends Command
     {
         $workerPIDs = [];
 
-        $result = Process::run('ps aux | grep "php artisan queue:work"');
+        $result = Process::run('ps aux | grep "artisan queue:work"');
 
         $processLines = explode("\n", $result->output());
 
